@@ -20,7 +20,7 @@ def add_messages(username, message):
     
     
 def get_all_messages():
-    """Get al of the messages and separate them by a `br`"""
+    """Get all of the messages and separate them by a `br`"""
     messages = []
     with open("data/messages.txt", "r") as chat_messages:
         messages = chat_messages.readlines()
@@ -52,4 +52,7 @@ def send_message(username, message):
     return redirect(username)
     
     
-app.run(host=os.getenv('IP'), port=int(os.getenv("PORT")), debug=True)
+app.run(
+    host=os.getenv('IP'), 
+    port=int(os.getenv("PORT")), 
+    debug=True)
